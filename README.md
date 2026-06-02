@@ -13,5 +13,10 @@
 - [LinkedIn](https://www.linkedin.com/in/dawid-jurczyk-726aa92b1/)
 - [Portfolio](https://dawju9.github.io/Ya-Whitekali/)
 
+### 💻 Konfiguracja Terminala i Serwera
+Szczegółowa analiza i pliki konfiguracyjne mojego środowiska:
+- [Analiza Konfiguracji](CONFIGURATION.md)
+- [Pliki konfiguracyjne (Linux)](linux/own/)
+
 ### 📊 Statystyki  [soon]
 ![GitHub stats](link_do_statystyk)
