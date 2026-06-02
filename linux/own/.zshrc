@@ -102,10 +102,25 @@ export NVM_DIR="$HOME/.nvm"
   source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # ==============================
-# NVM
+# NVM (Optimized Lazy Load)
 # ==============================
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+if [ -s "$NVM_DIR/nvm.sh" ]; then
+    nvm() {
+        unset -f nvm
+        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+        nvm "$@"
+    }
+    node() {
+        unset -f node
+        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+        node "$@"
+    }
+    npm() {
+        unset -f npm
+        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+        npm "$@"
+    }
+fi
 
 # ==============================
 # SOURCE MODULES
@@ -116,5 +131,4 @@ source ~/.zsh/welcome.sh
 # ==============================
 # EXTERNAL
 # ==============================
-source /Development/scripts/site-status.sh
-nvm use default
+[ -f /Development/scripts/site-status.sh ] && source /Development/scripts/site-status.sh

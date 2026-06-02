@@ -1,5 +1,8 @@
 # --- .bashrc ---
-# Use zsh for best experience: exec zsh
+# Use zsh for best experience
+if [ -z "$ZSH_VERSION" ] && [ -x /usr/bin/zsh ]; then
+    exec zsh
+fi
 
 # Cargo
 . "$HOME/.cargo/env" 2>/dev/null

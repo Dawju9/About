@@ -130,20 +130,21 @@ count_dirs() {
 count_lines() {
   local dir="$1"
   local excl_args=("${_FIND_EXCLUDES[@]}")
+  # Licz linie kodu w znanych rozszerzeniach, max 30s (timeout na read)
   if [[ ${#_FIND_EXCLUDES[@]} -eq 0 ]]; then
-    find "$dir" \
+    timeout 20 find "$dir" \
       \( -name "*.lua" -o -name "*.luau" -o -name "*.js" -o -name "*.ts" \
          -o -name "*.py" -o -name "*.rb" -o -name "*.rs" -o -name "*.java" \
          -o -name "*.go" -o -name "*.php" -o -name "*.html" -o -name "*.css" \
          -o -name "*.scss" \) \
-      -type f 2>/dev/null | xargs cat 2>/dev/null | wc -l
+      -type f -exec cat {} + 2>/dev/null | wc -l
   else
-    find "$dir" "${excl_args[@]}" \
+    timeout 20 find "$dir" "${excl_args[@]}" \
       \( -name "*.lua" -o -name "*.luau" -o -name "*.js" -o -name "*.ts" \
          -o -name "*.py" -o -name "*.rb" -o -name "*.rs" -o -name "*.java" \
          -o -name "*.go" -o -name "*.php" -o -name "*.html" -o -name "*.css" \
          -o -name "*.scss" \) \
-      -type f 2>/dev/null | xargs cat 2>/dev/null | wc -l
+      -type f -exec cat {} + 2>/dev/null | wc -l
   fi
 }
 

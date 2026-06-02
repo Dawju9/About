@@ -219,16 +219,16 @@ who() {
     print -P "%F{magenta}UŻYTKOWNIK       TTY        DATASLOGOWANIA    DZIEŃ%f"
     command who | while read -r line; do
       local user=$(echo "$line" | awk '{print $1}')
-      local tty=$(echo "$line" | awk '{2}' | cut -d: -f1)
-      local date=$(echo "$line" | awk '{print $2, $3}')
-      local day=$(echo "$line" | awk '{print $4}')
+      local tty=$(echo "$line" | awk '{print $2}' | cut -d: -f1)
+      local date=$(echo "$line" | awk '{print $3, $4}')
+      local day=$(echo "$line" | awk '{print $5}')
       echo -E " $user $tty $date $day"
     done
   else
     print -P "%F{magenta}UŻYTKOWNIK       TTY        LOGIN TIME                  OPCJONALNIE%f"
     command who | while read -r line; do
       local user=$(echo "$line" | awk '{print $1}')
-      local tty=$(echo "$line" | awk '{2}' | cut -d: -f1)
+      local tty=$(echo "$line" | awk '{print $2}' | cut -d: -f1)
       local rest=$(echo "$line" | sed "s/^[^ ]* *[^ ]* *//")
       echo -E " $user $tty $rest"
     done
