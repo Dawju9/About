@@ -40,5 +40,17 @@ Moja maszyna posiada inteligentny system powitań, który rozpoznaje projekt prz
    - **Opis:** Portfolio, sklep i strona usługowa.
    - **Branch:** `kalies`
 
+5. **CityX Map Viewer** (`/Development/projekt/cityx-map-viewer`)
+   - **Typ:** Next.js / TypeScript
+   - **Opis:** Wizualizacja map dla CityX Framework.
+
+6. **GreenDragon Site** (`/Development/repos/greendragon-site`)
+   - **Typ:** React / Vite
+   - **Opis:** Aplikacja do zdrapek.
+
+7. **MT5 Trading Bot** (`/Development/Rest/mt5_live_trading_bot`)
+   - **Typ:** Python / Algorithmic Trading
+   - **Opis:** Automatyzacja handlu na MetaTrader 5.
+
 ### 📊 Statystyki  [soon]
 ![GitHub stats](link_do_statystyk)
