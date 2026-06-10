@@ -9,8 +9,7 @@
 - Ciągły rozwój i innowacje
 
 ### 🌐 Znajdź nas
-- [Instagram](https://www.instagram.com/ayawhitekali/)
-- [LinkedIn](https://www.linkedin.com/in/dawid-jurczyk-726aa92b1/)
+- [Instagram](https://www.instagram.com/yawhitekali/)
 - [Portfolio](https://dawju9.github.io/Ya-Whitekali/)
 
 ### 💻 Konfiguracja Terminala i Serwera
